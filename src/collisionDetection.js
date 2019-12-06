@@ -17,6 +17,7 @@ function collisionDetection(ball, gameObject){
     && rightOfBall <= rightSideOfObject
     && leftOfBall >= leftSideOfObject) // within the x bounds of the object
     {
+      let hitPoint = ball.position
       let distanceFromBottom = Math.abs(topOfBall - bottomOfObject)
       let distanceFromTop = Math.abs(bottomOfBall - topOfObject)
       let distanceFromLeft = Math.abs(rightOfBall - leftSideOfObject)
@@ -26,21 +27,36 @@ function collisionDetection(ball, gameObject){
       
       if (gameObject.constructor === Brick) {
         gameObject.markedForDelete = true
-        score = score+1
-        scoreBoard.innerHTML = `Score: ${score}`
+        game.score.value++
+        // game.score.
+      }
+      let speedAdder = 0
+      if (gameObject.constructor === Paddle) {
+        let rand = Math.random()
+        if (rand < 0.33) {
+          speedAdder = -1
+        }
+        else if (rand >= 0.33 && rand <= 0.66) {
+          speedAdder = 0
+        }
+        else {
+          speedAdder = 1
+        }
       }
       if (minDistance === distanceFromBottom) {
         // console.log("Closest side: bottom, distance: ", minDistance)
-        if (gameObject.constructor === Paddle){
-          return false;
-        }
+        // if (gameObject.constructor === Paddle){
+        //   return false;
+        // }
         ball.speed.y = -ball.speed.y
+        ball.speed.x += speedAdder
         ball.position.y = bottomOfObject
         return true;
       }
       else if (minDistance === distanceFromTop) {
         // console.log("Closest side: top, distance: ", minDistance)
         ball.speed.y = -ball.speed.y
+        ball.speed.x += speedAdder
         ball.position.y = topOfObject - ball.size
         return true;
       }
@@ -48,12 +64,14 @@ function collisionDetection(ball, gameObject){
         // console.log("Closest side: left, distance: ", minDistance)
         // debugger
         ball.speed.x = -ball.speed.x
+        ball.speed.y += speedAdder
         ball.position.x = leftSideOfObject - ball.size
         return true;
       }
       else if (minDistance === distanceFromRight) {
         // console.log("Closest side: right, distance: ", minDistance)
         ball.speed.x = -ball.speed.x
+        ball.speed.y += speedAdder
         ball.position.x = rightSideOfObject
         return true;
       }
@@ -65,20 +83,4 @@ function collisionDetection(ball, gameObject){
   else { // no collision
   return false
   }
-}
-
-function buildLevel(game, level){
-  // debugger
-  level.forEach(function(row, rowIndex){
-    row.forEach(function(brick, brickIndex){
-      if (brick === 1) {
-        let position = {
-          x: 30 + 80 * brickIndex,
-          y: 75 + 40 * rowIndex
-        }
-        game.bricks.push(new Brick(game, position))
-      }
-    })
-  })
-  return game.bricks
 }

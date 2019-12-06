@@ -1,3 +1,5 @@
+let game = new Game(GAME_WIDTH, GAME_HEIGHT)
+
 document.addEventListener("DOMContentLoaded", function(){
 
   canvas.addEventListener("click", function(e){
@@ -11,15 +13,15 @@ document.addEventListener("DOMContentLoaded", function(){
     // game.balls.push(newBall)
   })
 
+  
 
+let lives = document.createElement("div")
+// scoreBoard.insertAdjacentElement("afterend", lives)
+lives.innerHTML = `Lives: ${game.lives}`
 
-  function gameLoop(){
-    ctx.clearRect(0,0,GAME_WIDTH,GAME_HEIGHT)
-    game.draw(ctx)
-    game.update()
-    requestAnimationFrame(gameLoop)
-  }
-
-  gameLoop()
+  game.init()
+  game.build(LEVEL1)
+  console.log(game)
+  game.gameLoop()
   // requestAnimationFrame(gameLoop)
-  })
+})

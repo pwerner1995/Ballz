@@ -20,8 +20,12 @@
 <body>
     <img id = "ball" src="assets/images/ball.png"/>
     <img id = "brick" src="assets/images/brick.png"/>
-    <canvas id="gameScreen" width = "800" height = "600"></canvas>
+    <canvas id="gameScreen" width = "800" height = "600" style="z-index: 3; position: absolute;"></canvas>
+    <div id = "score"></div>
+    <div id = "lives"></div>
+    <img id = "gameOver" src="assets/images/game_over.png" style="z-index: 1; position: absolute;"/>
     
+    <script src = "src/constants.js"></script>
     <script src = "src/Ball.js"></script>
     <script src = "src/collisionDetection.js"></script>
     <script src = "src/Brick.js"></script>
