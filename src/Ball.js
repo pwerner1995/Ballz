@@ -7,7 +7,7 @@ class Ball{
     this.gameWidth = game.gameWidth
     this.gameHeight = game.gameHeight
     this.game = game
-    this.size = 16
+    this.size = 15
   }
 
   draw(ctx){
@@ -17,7 +17,7 @@ class Ball{
   update(){
     this.speedV = Math.sqrt(this.speed.x*this.speed.x + this.speed.y*this.speed.y)
     if (this.speedV === 0){
-      this.position = {x: this.game.bottomPaddle.middleTopPos.x - (this.size / 2), y: this.game.bottomPaddle.middleTopPos.y}
+      this.position = {x: this.game.bottomPaddle.middleTopPos.x - (this.size / 2), y: this.game.bottomPaddle.middleTopPos.y-(this.size)}
     }
     else {
     this.position.x += this.speed.x

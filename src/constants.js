@@ -13,7 +13,7 @@ const highScore5 = document.querySelector("li#highScore5")
 
 let bottomPaddleOpts = {
   position: {},
-  size: {height: 20, width: 500}}
+  size: {height: 20, width: 300}}
 
 bottomPaddleOpts.position = {
   x: (GAME_WIDTH/2 - bottomPaddleOpts.size.width/2),
@@ -21,7 +21,7 @@ bottomPaddleOpts.position = {
 
 let topPaddleOpts = {
   position: {},
-  size: {height: 20, width: 500}}
+  size: {height: 20, width: 300}}
 
 topPaddleOpts.position = {
   x: (GAME_WIDTH/2 - topPaddleOpts.size.width/2),
@@ -29,7 +29,7 @@ topPaddleOpts.position = {
 
 let leftPaddleOpts = {
   position: {},
-  size: {height: 350, width: 20}}
+  size: {height: 250, width: 20}}
 
 leftPaddleOpts.position = {
   x: 4,
@@ -37,7 +37,7 @@ leftPaddleOpts.position = {
 
 let rightPaddleOpts = {
   position: {},
-  size: {height: 350, width: 20}}
+  size: {height: 250, width: 20}}
 
 rightPaddleOpts.position = {
   x: (GAME_WIDTH - rightPaddleOpts.size.width - 4),
@@ -45,28 +45,28 @@ rightPaddleOpts.position = {
 
 const LEVELS = [
   [
-    [0,0,1,0,0,1,0,0,0],
-    [0,1,0,1,0,0,0,1,0],
+    [0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0],
+    [1,1,1,1,1,1,1,1,1],
+    [1,1,1,1,1,1,1,1,1],
+    [1,1,1,1,1,1,1,1,1],
+    [1,1,1,1,1,1,1,1,1],
+  ],
+  [
+    [0,0,0,0,1,0,0,0,0],
     [0,0,0,1,1,1,0,0,0],
-    [0,0,0,0,1,1,1,1,1],
-    [1,1,1,1,1,1,1,1,1],
-    [1,1,1,1,1,1,1,1,1],
+    [0,0,1,1,1,1,1,0,0],
+    [0,0,1,1,1,1,1,0,0],
+    [0,1,1,1,1,1,1,1,0],
     [1,1,1,1,1,1,1,1,1],
   ],
   [
-    [0,0,1,0,0,1,0,0,1],
-    [0,0,0,1,0,0,1,0,0],
-    [0,0,0,0,0,1,0,0,0],
-    [0,1,0,0,1,1,1,1,1],
-    [0,0,1,1,1,1,1,1,1],
-    [0,1,1,1,1,1,1,1,1]
-  ],
-  [
-    [0,0,1,0,0,1,0,0,1],
-    [0,1,0,1,0,0,1,0,0],
-    [0,0,1,0,0,1,1,0,1],
-    [0,1,0,0,0,1,0,1,1],
-    [0,0,1,1,1,1,1,1,1]
-    // [1,1,1,1,1,1,1,1,1,1]
+    [0,0,0,1,1,1,0,0,1],
+    [0,0,0,1,1,1,1,0,0],
+    [0,0,1,1,1,1,1,0,1],
+    [1,1,1,1,1,1,1,1,1],
+    [1,1,1,1,1,1,1,1,1],
+    [1,1,1,1,1,1,1,1,1],
   ]
 ]

@@ -4,7 +4,7 @@
 
     <title>Brick Breaker</title>
     <meta charset="UTF-8">
-
+    <link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="src/styling.css">
 
 </head>
@@ -13,8 +13,10 @@
     <img id = "ball" src="assets/images/ball.png"/>
     <img id = "brick" src="assets/images/brick.png"/>
     <canvas id="gameScreen" width = "800" height = "600" style="z-index: 3; position: absolute;"></canvas>
-    <div id = "score"></div>
-    <div id = "lives"></div>
+    <div id = "scoreBoard">
+        <div id = "score"></div>
+        <div id = "lives"></div>
+    </div>
     <img id = "gameOver" src="assets/images/game_over.png" style="z-index: 1; position: absolute;"/>
     <img id = "youWin" src="assets/images/you_win.png" style="z-index: 1; position: absolute;"/>
     <div id = "scoreForm" style="display: none; position: absolute; left: 375px; top: 400px; text-align: center;">

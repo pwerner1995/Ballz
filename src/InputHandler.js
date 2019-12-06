@@ -57,9 +57,9 @@ class InputHandler{
 
         case 32: //spacebar
           if(game.ball.speedV === 0){
-            game.ball.speed.x = 5
-            game.ball.speed.y = 3
-            console.log(game.ball.speed)
+            game.ball.speed.x = 7
+            game.ball.speed.y = 4
+            // console.log(game.ball.speed)
           }
           if(!game.state){
             game.restart()

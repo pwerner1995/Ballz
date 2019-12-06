@@ -17,6 +17,10 @@ function collisionDetection(ball, gameObject){
     && rightOfBall <= rightSideOfObject
     && leftOfBall >= leftSideOfObject) // within the x bounds of the object
     {
+      // if(gameObject.position.x === 776){
+      //   leftSideOfObject = leftSideOfObject - 6
+        
+      // }
       let hitPoint = ball.position
       let distanceFromBottom = Math.abs(topOfBall - bottomOfObject)
       let distanceFromTop = Math.abs(bottomOfBall - topOfObject)
@@ -24,7 +28,9 @@ function collisionDetection(ball, gameObject){
       let distanceFromRight = Math.abs(leftOfBall - rightSideOfObject)
       let distanceArr = [distanceFromBottom, distanceFromTop, distanceFromLeft, distanceFromRight]
       let minDistance = Math.min(...distanceArr)
-      
+      // if(distanceFromLeft === 0 && distanceFromLeft !== null){
+      //   debugger
+      // }
       if (gameObject.constructor === Brick) {
         gameObject.markedForDelete = true
         game.score.value++
@@ -62,7 +68,7 @@ function collisionDetection(ball, gameObject){
         return true;
       }
       else if (minDistance === distanceFromLeft) {
-        // console.log("Closest side: left, distance: ", minDistance)
+        // console.log("Closest side: left, distance: ", minDistance, rightOfBall)
         // debugger
         ball.speed.x = -ball.speed.x
         // ball.speed.y += speedAdder

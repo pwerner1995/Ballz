@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Score.find_or_create_by(name: "KEN", score: 500)
-Score.find_or_create_by(name: "PET", score: 200)
-Score.find_or_create_by(name: "CHT", score: 600)
+Score.find_or_create_by(name: "KEN", score: 50)
+Score.find_or_create_by(name: "PET", score: 70000)
+Score.find_or_create_by(name: "CHT", score: 300)
+Score.find_or_create_by(name: "ABC", score: 600)
+Score.find_or_create_by(name: "XYZ", score: 30)

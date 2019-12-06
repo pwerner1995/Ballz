@@ -15,6 +15,7 @@ class Game{
     this.inputHandler = new InputHandler(this)
     this.score = {value: 0, element: document.querySelector("div#score")}
     this.lives = {value: 3, element: document.querySelector("div#lives")}
+    this.scoreBoard = document.querySelector("div#scoreBoard")
     this.state = true
     this.levelIndex = 0
     this.win = false
@@ -32,7 +33,7 @@ class Game{
         game.gameLoop()
       })}
       else {
-        console.log("game over")
+        // console.log("game over")
       }
   }
   
@@ -43,8 +44,8 @@ class Game{
         row.forEach(function(brick, brickIndex){
           if (brick === 1) {
             let position = {
-              x: 30 + 80 * brickIndex,
-              y: 75 + 40 * rowIndex
+              x: 85 + 70 * brickIndex,
+              y: 150 + 25 * rowIndex
             }
             game.bricks.push(new Brick(game, position))
           }
@@ -55,6 +56,7 @@ class Game{
       [...this.paddles,
           this.ball,
           ...this.bricks]
+      console.log(this.paddles)
     }
     else {
       this.win = true
@@ -70,6 +72,7 @@ class Game{
     // debugger
     this.score.element.innerText = `Score: ${this.score.value}`
     this.lives.element.innerText = `Lives: ${this.lives.value}`
+
 
     this.gameObjects= this.gameObjects.filter(function(obj){
       return !obj.markedForDelete

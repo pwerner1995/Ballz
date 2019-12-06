@@ -5,8 +5,8 @@ class Brick{
     this.position = position
     this.middleTopPos = {x: this.position.x + (this.width / 2), y: this.position.y}
     this.middleBottomPos = {x: this.middleTopPos.x, y: this.position.y + (this.height)}
-    this.width = 80
-    this.height = 40
+    this.width = 70
+    this.height = 25
     this.markedForDelete = false
   }
 

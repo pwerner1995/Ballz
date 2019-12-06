@@ -16,11 +16,12 @@ document.addEventListener("DOMContentLoaded", function(){
 
   
 
-let lives = document.createElement("div")
-// scoreBoard.insertAdjacentElement("afterend", lives)
-lives.innerHTML = `Lives: ${game.lives}`
-
+  // let lives = document.createElement("div")
+  // // scoreBoard.insertAdjacentElement("afterend", lives)
+  // lives.innerHTML = `Lives: ${game.lives}`
+  // debugger
   game.init()
+  // console.log(game.scoreBoard)
   game.build()
   // console.log(game)
   game.gameLoop()

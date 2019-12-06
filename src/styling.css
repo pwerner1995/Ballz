@@ -1,10 +1,26 @@
-div{
-  color: black;
+body{
+  background-color: black;
+  color: white;
+  font-family: 'VT323', monospace;
+  font-size: 150%;
 }
 #gameScreen{
-  border: 1px solid black;
+  border: 1px solid white;
   color: black;
 }
 img{
   display: none;
+}
+
+div#score{
+  display: inline-block;
+  position: absolute;
+  left: 50;
+  top: 620;
+}
+div#lives{
+  left: 725;
+  top: 620;
+  display: inline-block;
+  position: absolute;
 }
