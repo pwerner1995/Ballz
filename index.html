@@ -5,15 +5,7 @@
     <title>Brick Breaker</title>
     <meta charset="UTF-8">
 
-    <style>
-        #gameScreen{
-            border: 1px solid black 
-        }
-        img{
-            display: none;
-        }
-    </style>
-
+    <link rel="stylesheet" type="text/css" href="src/styling.css">
 
 </head>
 
@@ -24,6 +16,34 @@
     <div id = "score"></div>
     <div id = "lives"></div>
     <img id = "gameOver" src="assets/images/game_over.png" style="z-index: 1; position: absolute;"/>
+    <img id = "youWin" src="assets/images/you_win.png" style="z-index: 1; position: absolute;"/>
+    <div id = "scoreForm" style="display: none; position: absolute; left: 375px; top: 400px; text-align: center;">
+        <form action="POST" style="position: relative; align-self: auto;">
+            Score: <span id = "scoreSpan"></span><br>
+            Name: <input type="text" name="name" maxlength="3" size="2"><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <div id = "highScores" style="display: none; position: absolute; left: 325px; top: 215px; text-align: center;">
+        <div style="position: absolute; left: 25px; top: -25px">HIGH SCORES:</div><br>
+        <ol id = "highScoreList" style="text-align: left;">
+            <li id = "highScore1">
+                <span id = highScore1Name></span>: <span id = highScore1Score></span>
+            </li>
+            <li id = "highScore2">
+                <span id = highScore2Name></span>: <span id = highScore2Score></span>
+            </li>
+            <li id = "highScore3">
+                <span id = highScore3Name></span>: <span id = highScore3Score></span>
+            </li>
+            <li id = "highScore4">
+                <span id = highScore4Name></span>: <span id = highScore4Score></span>
+            </li>
+            <li id = "highScore5">
+                <span id = highScore5Name></span>: <span id = highScore5Score></span>
+            </li>
+        </ol>
+    </div>
     
     <script src = "src/constants.js"></script>
     <script src = "src/Ball.js"></script>

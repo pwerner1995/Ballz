@@ -67,5 +67,15 @@ class InputHandler{
           break
         }
       })
+    let form = scoreForm.querySelector("form")
+      form.addEventListener("submit", function(e){
+        e.preventDefault()
+        let name = e.target[0].value
+        let score = parseInt(scoreSpan.innerText)
+        let scoreObj = {name: name, score: score}
+        console.log(scoreObj)
+        // debugger
+        game.postScore(scoreObj)
+      })
     }
   }

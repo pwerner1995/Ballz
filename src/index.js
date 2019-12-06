@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function(){
   canvas.addEventListener("click", function(e){
     console.log("x: ", e.clientX - 8)
     console.log("y: ", e.clientY - 8)
+    console.log(e.target)
     // console.dir(e.target)
 
     // let newBall = new Ball(game)
@@ -20,8 +21,8 @@ let lives = document.createElement("div")
 lives.innerHTML = `Lives: ${game.lives}`
 
   game.init()
-  game.build(LEVEL1)
-  console.log(game)
+  game.build()
+  // console.log(game)
   game.gameLoop()
   // requestAnimationFrame(gameLoop)
 })
