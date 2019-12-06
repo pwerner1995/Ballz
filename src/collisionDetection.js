@@ -44,19 +44,20 @@ function collisionDetection(ball, gameObject){
         }
       }
       if (minDistance === distanceFromBottom) {
+        
         // console.log("Closest side: bottom, distance: ", minDistance)
         // if (gameObject.constructor === Paddle){
         //   return false;
         // }
         ball.speed.y = -ball.speed.y
-        ball.speed.x += speedAdder
+        // ball.speed.x += speedAdder
         ball.position.y = bottomOfObject
         return true;
       }
       else if (minDistance === distanceFromTop) {
         // console.log("Closest side: top, distance: ", minDistance)
         ball.speed.y = -ball.speed.y
-        ball.speed.x += speedAdder
+        // ball.speed.x += speedAdder
         ball.position.y = topOfObject - ball.size
         return true;
       }
@@ -64,14 +65,14 @@ function collisionDetection(ball, gameObject){
         // console.log("Closest side: left, distance: ", minDistance)
         // debugger
         ball.speed.x = -ball.speed.x
-        ball.speed.y += speedAdder
+        // ball.speed.y += speedAdder
         ball.position.x = leftSideOfObject - ball.size
         return true;
       }
       else if (minDistance === distanceFromRight) {
         // console.log("Closest side: right, distance: ", minDistance)
         ball.speed.x = -ball.speed.x
-        ball.speed.y += speedAdder
+        // ball.speed.y += speedAdder
         ball.position.x = rightSideOfObject
         return true;
       }
