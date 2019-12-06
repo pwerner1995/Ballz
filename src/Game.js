@@ -20,6 +20,7 @@ class Game{
     this.levelIndex = 0
     this.win = false
     scoreForm.style.display = "none"
+    highScoreDiv.style.display = "none"
   }
 
   gameLoop = () => {
